@@ -20,16 +20,16 @@ public class FoquitoScript : MonoBehaviour
 
     public void ActivateNextLight()
     {
-        currentLightIndex++;
-        if (currentLightIndex >= colors.Length)
+        currentLightIndex++; //suma 1 a la variable=0
+        if (currentLightIndex >= colors.Length) // si es = o mayor a colors lenght (canridad de colores de un array), luego esta variable vuelve a 0 para que no tire error.
         {
             currentLightIndex = 0;
         }
-        DeactivateAllLights();
-        colors[currentLightIndex].SetActive(true);
+        DeactivateAllLights(); //desactiva todas las luces
+        colors[currentLightIndex].SetActive(true); //activa una sola luz, que es el elem,ento que corresponde en la array de colors
     }
 
-    public void ActivatePreviousLight()
+    public void ActivatePreviousLight() //HACE LO MISMO QUE LA ANTERIOR PERO PARA ATRAS
     {
         currentLightIndex--;
         if (currentLightIndex < 0)
